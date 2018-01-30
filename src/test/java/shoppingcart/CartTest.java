@@ -21,4 +21,13 @@ public class CartTest {
 		int check = underTest.listSize();
 		Assert.assertEquals(2, check);
 	}
+
+	@Test
+	public void shouldGetTotalPrice() {
+		Cart underTest = new Cart();
+		underTest.addItem(new Item("oranges", 0.99, 3));
+		underTest.addItem(new Item("water bottles", 1.49, 10));
+		double check = underTest.getTotalPrice();
+		Assert.assertEquals(17.87, check, 0.001);
+	}
 }

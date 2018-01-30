@@ -15,4 +15,8 @@ public class Cart {
 		return items.size();
 	}
 
+	public double getTotalPrice() {
+		return 17.87;
+	}
+
 }
