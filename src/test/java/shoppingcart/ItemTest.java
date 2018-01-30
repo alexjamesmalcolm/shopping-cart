@@ -66,4 +66,15 @@ public class ItemTest {
 		String expected = "Item {Name: oranges, Price: 0.99, Quantity: 3}";
 		Assert.assertEquals(expected, check);
 	}
+	
+	@Test
+	public void shouldHaveAnotherToString() {
+		String inputName = "water bottles";
+		double inputPrice = 1.49;
+		int inputQuantity = 10;
+		Item underTest = new Item(inputName, inputPrice, inputQuantity);
+		String check = underTest.toString();
+		String expected = "Item {Name: water bottles, Price: 1.49, Quantity: 10}";
+		Assert.assertEquals(expected, check);
+	}
 }

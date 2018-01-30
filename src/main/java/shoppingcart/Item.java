@@ -29,10 +29,10 @@ public class Item {
 	public int getQuantity() {
 		return quantity;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Item {Name: oranges, Price: 0.99, Quantity: 3}";
+		return "Item {Name: " + name + ", Price: " + price + ", Quantity: " + quantity + "}";
 	}
 
 }
