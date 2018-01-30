@@ -28,6 +28,7 @@ public class ShopApp {
 
 	private static void askRemoveAmount(Cart cart, Scanner input) {
 		System.out.println("What item would you like to remove?");
+		input.next();
 		String name = input.nextLine();
 		System.out.println("How many would you like to remove?");
 		int quantity = input.nextInt();
@@ -36,7 +37,7 @@ public class ShopApp {
 
 	private static void askRemoveAll(Cart cart, Scanner input) {
 		System.out.println("What item would you like to remove?");
-		String choice = input.nextLine();
+		String choice = input.next();
 		cart.removeAll(choice);
 	}
 

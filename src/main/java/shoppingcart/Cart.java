@@ -3,7 +3,6 @@ package shoppingcart;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 
 public class Cart {
 
@@ -45,11 +44,12 @@ public class Cart {
 		if (items.size() > 0) {
 			System.out.println("Current Cart");
 			items.forEach((item) -> {
-				System.out.println(item);
 				String name = item.getName();
 				double price = item.getPrice();
-				
+				int quantity = item.getQuantity();
+				System.out.println("Item: " + name + "\tPrice: " + toMoney(price) + "\tQuantity: " + quantity);
 			});
+
 			System.out.println("Total Price: " + toMoney(getTotalPrice()));
 		} else {
 			System.out.println("Current Cart is Empty");
