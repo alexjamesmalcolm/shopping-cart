@@ -59,12 +59,22 @@ public class CartTest {
 	}
 
 	@Test
-	public void shouldRemoveItem() {
+	public void shouldRemoveAllOfItem() {
 		Cart underTest = new Cart();
 		underTest.addItem(new Item("oranges", 0.99, 3));
 		underTest.addItem(new Item("water bottles", 1.49, 10));
-		underTest.remove("oranges");
+		underTest.removeAll("oranges");
 		int check = underTest.listSize();
 		Assert.assertEquals(1, check);
+	}
+
+	@Test
+	public void shouldRemoveTwoItems() {
+		Cart underTest = new Cart();
+		underTest.addItem(new Item("oranges", 0.99, 3));
+		underTest.addItem(new Item("water bottles", 1.49, 10));
+		underTest.remove("oranges", 2);
+		int check = underTest.getTotalQuantity();
+		Assert.assertEquals(11, check);
 	}
 }

@@ -35,4 +35,8 @@ public class Item {
 		return "Item {Name: " + name + ", Price: " + price + ", Quantity: " + quantity + "}";
 	}
 
+	public void setQuantity(int newQuantity) {
+		quantity = newQuantity;
+	}
+
 }

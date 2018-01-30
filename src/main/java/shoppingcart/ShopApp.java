@@ -10,26 +10,46 @@ public class ShopApp {
 		Scanner input = new Scanner(System.in);
 		boolean quit = false;
 		while (!quit) {
+			myCart.displayCart();
+			int choice = mainMenu(input);
+			if (choice == 1) {
+				askForItem(myCart, input);
+			} else if (choice == 2) {
+				System.out.println("What item would you like to remove?");
+				String name = input.nextLine();
+				System.out.println("How many would you like to remove?");
+				int quantity = input.nextInt();
+			} else if (choice == 3) {
+				askRemoveAll(myCart, input);
+			} else if (choice == 4) {
+				quit = true;
+			}
 			askForItem(myCart, input);
 			System.out.println();
-			myCart.displayCart();
-			quit = askIfQuit(input);
 		}
 		input.close();
 	}
 
-	private static boolean askIfQuit(Scanner input) {
-		boolean quit;
-		System.out.println("Continue shopping (y/n)?");
-		quit = input.next().equals("y");
-		return quit;
+	private static void askRemoveAll(Cart cart, Scanner input) {
+		System.out.println("What item would you like to remove?");
+		String choice = input.nextLine();
+		cart.removeAll(choice);
 	}
 
-	private static void askForItem(Cart myCart, Scanner input) {
+	private static int mainMenu(Scanner input) {
+		System.out.println("1. Add item");
+		System.out.println("2. Remove # of item");
+		System.out.println("3. Remove all of item");
+		System.out.println("4. Checkout");
+		int choice = input.nextInt();
+		return choice;
+	}
+
+	private static void askForItem(Cart cart, Scanner input) {
 		String name = askForName(input);
 		Double price = askForPrice(input);
 		int quantity = askForQuantity(input);
-		myCart.addItem(new Item(name, price, quantity));
+		cart.addItem(new Item(name, price, quantity));
 	}
 
 	private static int askForQuantity(Scanner input) {
