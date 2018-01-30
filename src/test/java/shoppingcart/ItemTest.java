@@ -18,4 +18,11 @@ public class ItemTest {
 		double check = underTest.getPrice();
 		Assert.assertEquals(0.0, check, 0.001);
 	}
+	
+	@Test
+	public void shouldGetQuantity() {
+		Item underTest = new Item();
+		int check = underTest.getQuantity();
+		Assert.assertEquals(0, check);
+	}
 }

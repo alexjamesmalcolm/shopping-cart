@@ -10,4 +10,8 @@ public class Item {
 		return 0;
 	}
 
+	public int getQuantity() {
+		return 0;
+	}
+
 }
