@@ -22,5 +22,9 @@ public class Cart {
 	public int getTotalQuantity() {
 		return items.stream().mapToInt((Item item) -> item.getQuantity()).sum();
 	}
+	
+	public void remove(String name) {
+		items.removeIf((Item item) -> item.getName().equals(name));
+	}
 
 }

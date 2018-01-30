@@ -30,7 +30,7 @@ public class CartTest {
 		double check = underTest.getTotalPrice();
 		Assert.assertEquals(17.87, check, 0.001);
 	}
-	
+
 	@Test
 	public void shouldGetTotalPrice10158() {
 		Cart underTest = new Cart();
@@ -39,7 +39,7 @@ public class CartTest {
 		double check = underTest.getTotalPrice();
 		Assert.assertEquals(101.58, check, 0.001);
 	}
-	
+
 	@Test
 	public void shouldGetTotalQuantityTwo() {
 		Cart underTest = new Cart();
@@ -48,7 +48,7 @@ public class CartTest {
 		int check = underTest.getTotalQuantity();
 		Assert.assertEquals(2, check);
 	}
-	
+
 	@Test
 	public void shouldGetTotalQuantityThree() {
 		Cart underTest = new Cart();
@@ -57,11 +57,14 @@ public class CartTest {
 		int check = underTest.getTotalQuantity();
 		Assert.assertEquals(3, check);
 	}
-	
-//	@Test
-//	public void shouldGetRemoveItem() {
-//		Cart underTest = new Cart();
-//		underTest.addItem(new Item("oranges", 0.99, 3));
-//		underTest.addItem(new Item("water bottles", 1.49, 10));
-//	}
+
+	@Test
+	public void shouldRemoveItem() {
+		Cart underTest = new Cart();
+		underTest.addItem(new Item("oranges", 0.99, 3));
+		underTest.addItem(new Item("water bottles", 1.49, 10));
+		underTest.remove("oranges");
+		int check = underTest.listSize();
+		Assert.assertEquals(1, check);
+	}
 }
