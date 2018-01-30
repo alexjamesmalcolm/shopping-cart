@@ -11,4 +11,11 @@ public class ItemTest {
 		String check = underTest.getName();
 		Assert.assertEquals("", check);
 	}
+	
+	@Test
+	public void shouldGetPrice() {
+		Item underTest = new Item();
+		double check = underTest.getPrice();
+		Assert.assertEquals(0.0, check, 0.001);
+	}
 }

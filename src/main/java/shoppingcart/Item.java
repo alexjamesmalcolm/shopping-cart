@@ -6,4 +6,8 @@ public class Item {
 		return "";
 	}
 
+	public double getPrice() {
+		return 0;
+	}
+
 }
