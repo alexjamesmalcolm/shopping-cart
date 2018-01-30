@@ -1,5 +1,6 @@
 package shoppingcart;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -45,10 +46,19 @@ public class Cart {
 			System.out.println("Current Cart");
 			items.forEach((item) -> {
 				System.out.println(item);
+				String name = item.getName();
+				double price = item.getPrice();
+				
 			});
-			System.out.println("Total Price: " + getTotalPrice());
+			System.out.println("Total Price: " + toMoney(getTotalPrice()));
 		} else {
 			System.out.println("Current Cart is Empty");
 		}
+	}
+
+	private String toMoney(double price) {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String moneyString = formatter.format(price);
+		return moneyString;
 	}
 }

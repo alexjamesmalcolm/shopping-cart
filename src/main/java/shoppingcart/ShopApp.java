@@ -15,19 +15,23 @@ public class ShopApp {
 			if (choice == 1) {
 				askForItem(myCart, input);
 			} else if (choice == 2) {
-				System.out.println("What item would you like to remove?");
-				String name = input.nextLine();
-				System.out.println("How many would you like to remove?");
-				int quantity = input.nextInt();
+				askRemoveAmount(myCart, input);
 			} else if (choice == 3) {
 				askRemoveAll(myCart, input);
 			} else if (choice == 4) {
 				quit = true;
 			}
-			askForItem(myCart, input);
 			System.out.println();
 		}
 		input.close();
+	}
+
+	private static void askRemoveAmount(Cart cart, Scanner input) {
+		System.out.println("What item would you like to remove?");
+		String name = input.nextLine();
+		System.out.println("How many would you like to remove?");
+		int quantity = input.nextInt();
+		cart.remove(name, quantity);
 	}
 
 	private static void askRemoveAll(Cart cart, Scanner input) {
@@ -59,7 +63,7 @@ public class ShopApp {
 	}
 
 	private static Double askForPrice(Scanner input) {
-		System.out.print("Enter the price of the item: ");
+		System.out.print("Enter the price per item: ");
 		Double price = input.nextDouble();
 		return price;
 	}
