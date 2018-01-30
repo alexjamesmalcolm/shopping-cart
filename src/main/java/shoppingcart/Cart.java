@@ -20,7 +20,7 @@ public class Cart {
 	}
 
 	public int getTotalQuantity() {
-		return 2;
+		return items.stream().mapToInt((Item item) -> item.getQuantity()).sum();
 	}
 
 }
