@@ -55,4 +55,15 @@ public class ItemTest {
 		int quantity = underTest.getQuantity();
 		Assert.assertEquals(inputQuantity, quantity);
 	}
+	
+	@Test
+	public void shouldHaveToString() {
+		String inputName = "oranges";
+		double inputPrice = 0.99;
+		int inputQuantity = 3;
+		Item underTest = new Item(inputName, inputPrice, inputQuantity);
+		String check = underTest.toString();
+		String expected = "Item {Name: oranges, Price: 0.99, Quantity: 3}";
+		Assert.assertEquals(expected, check);
+	}
 }
