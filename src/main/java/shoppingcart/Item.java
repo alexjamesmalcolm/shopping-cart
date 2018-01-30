@@ -19,7 +19,7 @@ public class Item {
 	}
 
 	public String getName() {
-		return "";
+		return name;
 	}
 
 	public double getPrice() {
