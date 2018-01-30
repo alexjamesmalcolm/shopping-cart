@@ -23,11 +23,20 @@ public class CartTest {
 	}
 
 	@Test
-	public void shouldGetTotalPrice() {
+	public void shouldGetTotalPrice1787() {
 		Cart underTest = new Cart();
 		underTest.addItem(new Item("oranges", 0.99, 3));
 		underTest.addItem(new Item("water bottles", 1.49, 10));
 		double check = underTest.getTotalPrice();
 		Assert.assertEquals(17.87, check, 0.001);
+	}
+	
+	@Test
+	public void shouldGetTotalPrice10158() {
+		Cart underTest = new Cart();
+		underTest.addItem(new Item("oranges", 1.29, 2));
+		underTest.addItem(new Item("brando", 99, 1));
+		double check = underTest.getTotalPrice();
+		Assert.assertEquals(101.58, check, 0.001);
 	}
 }
