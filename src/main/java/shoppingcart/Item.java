@@ -2,6 +2,12 @@ package shoppingcart;
 
 public class Item {
 
+	public Item(String name, double price, int quantity) {
+	}
+
+	public Item() {
+	}
+
 	public String getName() {
 		return "";
 	}
