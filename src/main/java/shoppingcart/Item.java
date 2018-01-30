@@ -23,7 +23,7 @@ public class Item {
 	}
 
 	public double getPrice() {
-		return 0;
+		return price;
 	}
 
 	public int getQuantity() {
