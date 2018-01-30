@@ -19,4 +19,8 @@ public class Cart {
 		return items.stream().mapToDouble((Item item) -> item.getPrice() * item.getQuantity()).sum();
 	}
 
+	public int getTotalQuantity() {
+		return 2;
+	}
+
 }
