@@ -22,9 +22,20 @@ public class Cart {
 	public int getTotalQuantity() {
 		return items.stream().mapToInt((Item item) -> item.getQuantity()).sum();
 	}
-	
+
 	public void remove(String name) {
 		items.removeIf((Item item) -> item.getName().equals(name));
 	}
 
+	public void displayCart() {
+		if (items.size() > 0) {
+			System.out.println("Current Cart");
+			items.forEach((item) -> {
+				System.out.println(item);
+			});
+			System.out.println("Total Price: " + getTotalPrice());
+		} else {
+			System.out.println("Current Cart is Empty");
+		}
+	}
 }
